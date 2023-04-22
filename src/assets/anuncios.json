@@ -1,0 +1,61 @@
+[
+  {
+    "_id": "1",
+    "tituloLivro": "O que é esclarecimento?",
+    "autorLivro": "Kant",
+    "generoLivro": "Filosofia",
+    "descricaoLivro": "Kant trata da ideia de que o ser humano só se constitui como tal através do conhecimento.",
+    "anunciante": "Willian",
+    "imgLivro": "../../../assets/kant-esclarecimento.jpg"
+  },
+
+  {
+    "_id": "2",
+    "tituloLivro": "Amor Liquido",
+    "autorLivro": "Zygmunt Buaman",
+    "generoLivro": "Sociologia",
+    "descricaoLivro": "A era da modernidade líquida em que vivemos ― um mundo repleto de sinais confusos, propenso a mudar com rapidez e de forma imprevisível.",
+    "anunciante": "Ricardo",
+    "imgLivro": "../../../assets/bauman-amor.jpg"
+  },
+
+  {
+    "_id": "3",
+    "tituloLivro": "O Príncipe",
+    "autorLivro": "Maquiavel",
+    "generoLivro": "Filosofia",
+    "descricaoLivro": "Nesta obra, que é um clássico sobre pensamento político, o grande escritor Maquiavel mostra como funciona a ciência política.",
+    "anunciante": "Flavio",
+    "imgLivro": "../../../assets/maquiavel-principe.jpg"
+  },
+
+  {
+    "_id": "4",
+    "tituloLivro": "1499: O Brasil antes de Cabral",
+    "autorLivro": "Reinaldo Jose",
+    "generoLivro": "Historia",
+    "descricaoLivro": "Este livro relata a ascensão do Brasil pré-histórico e explica por que ocorreu sua queda.",
+    "anunciante": "Marcelo",
+    "imgLivro": "../../../assets/reinaldo-1499.jpg"
+  },
+
+  {
+    "_id": "5",
+    "tituloLivro": "Rapido e devagar",
+    "autorLivro": "Daniel Kahneman",
+    "generoLivro": "Ciencia",
+    "descricaoLivro": "duas formas de pensar, Daniel Kahneman nos leva a uma viagem pela mente humana e explica as duas formas de pensar: uma é rápida, intuitiva e emocional.",
+    "anunciante": "Leia",
+    "imgLivro": "../../../assets/daniel-rapido.jpg"
+  },
+
+  {
+    "_id": "6",
+    "tituloLivro": "O mundo assombrado por demonios",
+    "autorLivro": "Carl Sagan",
+    "generoLivro": "Ciencia",
+    "descricaoLivro": "Assombrado com as explicações pseudocientíficas e místicas que ocupam cada vez mais os espaços dos meios de comunicação, Carl Sagan reafirma o poder positivo e benéfico da ciência e da tecnologia.",
+    "anunciante": "Mel",
+    "imgLivro": "../../../assets/sagan-mundo.jpg"
+  }
+]

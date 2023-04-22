@@ -93,12 +93,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+              "./node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e027439f-0e66-4612-a55b-b53aa5163b71"
   }
 }

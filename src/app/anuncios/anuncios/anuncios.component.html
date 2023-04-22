@@ -1,0 +1,34 @@
+<!-- O ngIf é tipo um If ternario, e caso essa caralha nao puxe as info do observable ele vai rodar o tamplete "carregando" que ta la no final. -->
+<div class="container" *ngIf="anuncios$ | async as anuncios; else carregando">
+  <mat-card class="card" *ngFor="let anuncio of anuncios$ | async">
+    <mat-card-header style="width: 100%">
+
+      <mat-card-title>{{ anuncio.tituloLivro }}</mat-card-title>
+    </mat-card-header>
+
+    <!-- Tem dar uma olhada no caminho da img do livro la mo b.o -->
+    <div class="img-livro">
+      <img
+        mat-card-image
+        src="{{ anuncio.imgLivro }}"
+        alt="Imagem do livro anunciado"
+      />
+    </div>
+
+    <mat-card-content>
+      <p class="autor">  Autor: {{ anuncio.autorLivro }}</p>
+      <p class="genero">  Genero: {{ anuncio.generoLivro }}</p>
+      <p class="descricao"> <span> Descrição:</span> {{ anuncio.descricaoLivro }}</p>
+     <!-- Img de perfil -->
+     <div mat-card-avatar class="img-perfil-anunciante"></div>
+      <p class="anunciante"> <span> Anunciante:</span> {{ anuncio.anunciante }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Tamplate de loading enquanto aguarda os dados -->
+<ng-template #carregando>
+  <div class="carregamento-postagens">
+    <mat-spinner style="height: 50px"></mat-spinner>
+  </div>
+</ng-template>

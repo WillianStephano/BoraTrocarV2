@@ -1,0 +1,87 @@
+.card {
+  max-width: 20.5%;
+  box-shadow: 0 0 10px 0 #808080;
+  box-sizing: border-box;
+  font-family: "nunito";
+
+  .img-perfil-anunciante {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+  }
+
+  .img-livro {
+    max-height: 200px;
+    width: 40%;
+    margin: 2% auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .mat-mdc-card-header {
+    justify-content: center;
+  }
+
+  mat-card-header,
+  mat-card-title {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .autor,
+  .genero {
+    font-size: 12px;
+    line-height: 0.2rem;
+  }
+
+  .autor,
+  .genero,
+  .descricao,
+  .anunciante {
+    color: #707070;
+
+    span {
+      color: #0f0f0f;
+      font-weight: 700;
+      font-family: "lato";
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(100.5%);
+    transition: 200ms;
+  }
+}
+
+.container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2% auto;
+  gap: 30px;
+  row-gap: 30px;
+}
+
+.carregamento-postagens {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+/* deu ruim aqui, to usando css inline la
+.carregamento-postagens mat-spinner{
+  height: 50px;
+}
+ */
+
+@media screen and (min-width: 1600px) {
+  .card {
+    width: 17.5%;
+  }
+}
