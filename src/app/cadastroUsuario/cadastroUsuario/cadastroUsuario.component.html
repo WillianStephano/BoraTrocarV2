@@ -1,0 +1,38 @@
+<mat-card class="card-cadastro-usuario">
+  <form
+    action="/submit-form"
+    method="post"
+    [formGroup]="cadastroUsuarioFormulario"
+    (submit)="cadastrarUsuario()"
+  >
+    <mat-form-field appearance="fill" class="form-cadastro-usuario">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput type="text" formControlName="nomeUsuario" autofocus />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-cadastro-usuario">
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-cadastro-usuario">
+      <mat-label>Nickname</mat-label>
+      <input matInput type="text" formControlName="nickname" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input matInput type="password" formControlName="senha" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-cadastro-usuario">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput type="date" formControlName="dataNascimento" />
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">Cadastro</button>
+      <button (click)="limpar()" mat-stroked-button color="warn">Limpar</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

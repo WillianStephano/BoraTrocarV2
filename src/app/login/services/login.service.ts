@@ -1,3 +1,4 @@
+import { TokenService } from './../login/token/token.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
@@ -6,22 +7,21 @@ import { tap } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginService {
-  private readonly API = `http://localhost:3000`;
+  private readonly API = `http://localhost:8090`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private tokenService: TokenService) {}
 
-  autentica(userName: string, password: string) {
+  autentica(email: string, senha: string) {
     return this.http
       .post(
-        this.API + '/user/login',{ userName, password },
+        this.API + '/usuario/logar',
+        { email, senha },
         { observe: 'response' } //ta aqui para ser usado no esquema do token abaixo
       )
       .pipe(
         tap((res) => {
           const tokenDeAutenticacao = res.headers.get('x-access-token');
-          window.localStorage.setItem(
-            'tokenDeAutenticacao', tokenDeAutenticacao!); //tem que ver se o ! nao vai dar merda
-          console.log(tokenDeAutenticacao);
+          this.tokenService.setToken(tokenDeAutenticacao);
         })
       );
     //pega o header do response e extrai dele o token de autenticação do usuario

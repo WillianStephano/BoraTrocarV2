@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginModule } from './login/login.module';
-import { CadastroModule } from './cadastro/cadastro.module';
+import { CadastroUsuarioModule } from './cadastroUsuario/cadastroUsuario.module';
 
 //Tudo que é modulo tem q estar aqui lembre-se disso.
 @NgModule({
@@ -25,7 +25,7 @@ import { CadastroModule } from './cadastro/cadastro.module';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    CadastroModule,
+    CadastroUsuarioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

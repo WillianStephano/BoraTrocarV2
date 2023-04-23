@@ -24,19 +24,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginFormulario = this.formBuilder.group({
       //aqui eu controlo o form de login, o primeiro parametro do array é o valor padrao do form.
-      userName: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', Validators.required],
+      senha: ['', Validators.required],
     });
   }
 
   login() {
-    const userName = this.loginFormulario.get('userName')?.value;
-    const password = this.loginFormulario.get('password')?.value;
+    const email = this.loginFormulario.get('email')?.value;
+    const senha = this.loginFormulario.get('senha')?.value;
 
-    console.log(userName, password);
+    console.log(email, senha);
 
-    this.LoginService.autentica(userName, password).subscribe(
-      () => this.router.navigateByUrl('/postagens'), //Da para usar o navigate([postagens, nome do usuario logado ou sla ])
+    this.LoginService.autentica(email, senha).subscribe(
+      () => this.router.navigateByUrl('/anuncios'), //Da para usar o navigate([/anuncios, nome do usuario logado ou sla ])
       (err) => {
         console.log(err);
         this.loginFormulario.reset();
