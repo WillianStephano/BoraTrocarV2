@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginModule } from './login/login.module';
 import { CadastroUsuarioModule } from './cadastroUsuario/cadastroUsuario.module';
+import { PerfilModule } from './perfil/perfil.module';
+import { LoginService } from './login/services/login.service';
 
 //Tudo que é modulo tem q estar aqui lembre-se disso.
 @NgModule({
@@ -26,6 +28,7 @@ import { CadastroUsuarioModule } from './cadastroUsuario/cadastroUsuario.module'
     MatInputModule,
     MatButtonModule,
     CadastroUsuarioModule,
+    PerfilModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

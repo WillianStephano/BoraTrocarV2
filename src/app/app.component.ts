@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login/services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  constructor(public loginService: LoginService) {}
   title = 'FalaMansa';
 
-  emailUser = localStorage.getItem('emailUser')
-
+  emailUser = localStorage.getItem('emailUser');
 }

@@ -30,4 +30,9 @@ export class LoginService {
       );
     //pega o header do response e extrai dele o token de autenticação do usuario
   }
+
+  estaAutenticado(): boolean {
+    const tokenDeAutenticacao = this.tokenService.getToken();
+    return tokenDeAutenticacao !== null;
+  }
 }

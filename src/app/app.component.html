@@ -8,7 +8,20 @@
     <div class="menu-toolbar">
       <button
         mat-button
-        [routerLink]="['/login']"
+        *ngIf="loginService.estaAutenticado()"
+        routerLink="/perfil"
+        routerLinkActive="router-link-active"
+      >
+        <i class="material-icons">person</i>
+        <ng-container *ngIf="emailUser; else userVazio">
+          {{ emailUser }}
+        </ng-container>
+      </button>
+
+      <button
+        mat-button
+        *ngIf="!loginService.estaAutenticado()"
+        routerLink="/login"
         routerLinkActive="router-link-active"
       >
         <i class="material-icons">person</i>
