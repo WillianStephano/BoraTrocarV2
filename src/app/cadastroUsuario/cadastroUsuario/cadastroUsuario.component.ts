@@ -13,17 +13,46 @@ export class CadastroUsuarioComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private CadastroUsuarioService: CadastroUsuarioService //private router: Router
+    private CadastroUsuarioService: CadastroUsuarioService,
+    private router: Router //private router: Router
   ) {}
 
   ngOnInit(): void {
     this.cadastroUsuarioFormulario = this.formBuilder.group({
       //aqui eu controlo o form de cadastro, o primeiro parametro do array é o valor padrao do form.
-      nomeUsuario: ['', Validators.required],
-      email: ['', Validators.required],
-      nickname: ['', Validators.required],
-      senha: ['', Validators.required],
-      dataNascimento: ['', Validators.required],
+      nomeUsuario: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-Z\s]*$/),
+        ],
+      ],
+
+      email: ['', [Validators.required, Validators.email]],
+
+      nickname: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(20),
+        ],
+      ],
+      senha: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(20),
+        ],
+      ],
+
+      dataNascimento: [
+        '',
+        [Validators.required /* this.validaDataNascimento() */],
+      ],
     });
   }
 
@@ -42,10 +71,30 @@ export class CadastroUsuarioComponent {
       nickname,
       senha,
       dataNascimento
-    ).subscribe(() => console.log('a'));
+    ).subscribe(
+      () => this.router.navigateByUrl('/login'),
+      () => console.log('Usuario cadastrado')
+    );
   }
 
   limpar() {
     this.cadastroUsuarioFormulario.reset();
   }
+
+  /* validaDataNascimento(): Validators {
+    return (cadastroUsuarioFormulario: FormGroup) => {
+      const dataAtual = new Date();
+      const anoAtual = dataAtual.getFullYear();
+      console.log(anoAtual);
+
+      const dataDoForm = cadastroUsuarioFormulario.get('dataNascimento')?.value;
+      console.log(dataDoForm);
+
+      if (dataDoForm >= anoAtual) {
+        return { dataMaxima: true };
+      }
+
+      return null;
+    };
+  } */
 }

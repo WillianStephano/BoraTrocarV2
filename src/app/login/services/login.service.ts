@@ -22,6 +22,10 @@ export class LoginService {
         tap((res) => {
           const tokenDeAutenticacao = res.headers.get('x-access-token');
           this.tokenService.setToken(tokenDeAutenticacao);
+
+          window.localStorage.setItem('emailUser', email);
+
+          //Tenho q fazer a decodificação do token e pegar o nome do usuario
         })
       );
     //pega o header do response e extrai dele o token de autenticação do usuario

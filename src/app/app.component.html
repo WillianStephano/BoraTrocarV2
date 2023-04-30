@@ -1,29 +1,46 @@
 <mat-toolbar color="primary">
   <section class="menu-principal">
     <a class="logo" routerLink="/">
-      <img src="../assets/books.svg" alt="" srcset="">
+      <img src="../assets/books.svg" alt="" srcset="" />
       <span>Bora Trocar</span>
     </a>
 
     <div class="menu-toolbar">
-      <button mat-button [routerLink]="['/login']" routerLinkActive="router-link-active">
+      <button
+        mat-button
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+      >
         <i class="material-icons">person</i>
-        Perfil
+        <ng-container *ngIf="emailUser; else userVazio">
+          {{ emailUser }}
+        </ng-container>
       </button>
 
-      <button mat-button [routerLink]="['/login']" routerLinkActive="router-link-active">
+      <button
+        mat-button
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+      >
         <i class="material-icons">home</i>
         Login
       </button>
 
-      <button mat-button [routerLink]="['/anuncios']" routerLinkActive="router-link-active">
+      <button
+        mat-button
+        [routerLink]="['/anuncios']"
+        routerLinkActive="router-link-active"
+      >
         <i class="material-icons">comment</i>
         Anuncios
       </button>
-
     </div>
   </section>
 </mat-toolbar>
 
 <!-- Fala que estamos usando controle de rotas -->
 <router-outlet></router-outlet>
+
+<ng-template #userVazio>
+  <div class="">Perfil</div>
+</ng-template>

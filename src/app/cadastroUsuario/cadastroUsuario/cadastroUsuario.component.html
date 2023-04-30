@@ -7,22 +7,60 @@
   >
     <mat-form-field appearance="fill" class="form-cadastro-usuario">
       <mat-label>Nome Completo</mat-label>
-      <input matInput type="text" formControlName="nomeUsuario" autofocus />
+      <input
+        matInput
+        type="text"
+        formControlName="nomeUsuario"
+        pattern="[a-zA-Z ]*"
+        autofocus
+      />
+      <small
+        *ngIf="
+          cadastroUsuarioFormulario.get('nomeUsuario')?.touched &&
+          cadastroUsuarioFormulario.get('nomeUsuario')?.value
+        "
+      >
+        5 a 20 caracteres apenas letras
+      </small>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="form-cadastro-usuario">
       <mat-label>E-mail</mat-label>
       <input matInput type="email" formControlName="email" />
+      <small
+        *ngIf="
+          cadastroUsuarioFormulario.get('email')?.touched &&
+          cadastroUsuarioFormulario.get('email')?.value
+        "
+      >
+        exemplo@email.com
+      </small>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="form-cadastro-usuario">
       <mat-label>Nickname</mat-label>
       <input matInput type="text" formControlName="nickname" />
+      <small
+        *ngIf="
+          cadastroUsuarioFormulario.get('nickname')?.touched &&
+          cadastroUsuarioFormulario.get('nickname')?.value
+        "
+      >
+        3 a 20 caracteres
+      </small>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Senha</mat-label>
       <input matInput type="password" formControlName="senha" />
+      <small
+        *ngIf="
+          cadastroUsuarioFormulario.get('senha')?.touched &&
+          cadastroUsuarioFormulario.get('senha')?.value
+        "
+      >
+        5 a 20 caracteres
+      </small>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="form-cadastro-usuario">

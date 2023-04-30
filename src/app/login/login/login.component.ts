@@ -19,8 +19,6 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  //VAI TER QUE TROCAR TUDO QUE É USERNAME POR EMAIL, ta assim pq a api teste usa como username.
-
   ngOnInit(): void {
     this.loginFormulario = this.formBuilder.group({
       //aqui eu controlo o form de login, o primeiro parametro do array é o valor padrao do form.
