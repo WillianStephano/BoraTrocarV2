@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginModule } from './login/login.module';
 import { CadastroUsuarioModule } from './cadastroUsuario/cadastroUsuario.module';
 import { PerfilModule } from './perfil/perfil.module';
-import { LoginService } from './login/services/login.service';
+//import { LoginService } from './login/services/login.service';
 
 //Tudo que é modulo tem q estar aqui lembre-se disso.
 @NgModule({
