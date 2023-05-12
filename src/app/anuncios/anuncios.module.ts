@@ -9,10 +9,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'; //analisar uso
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatChipsModule } from '@angular/material/chips'; //teste
+import { MatChipsModule } from '@angular/material/chips';
+import { AnunciosCadastroComponent } from './anuncios-cadastro/anuncios-cadastro.component'; //teste
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [AnunciosComponent],
+  declarations: [AnunciosComponent, AnunciosCadastroComponent],
   imports: [
     CommonModule,
     AnunciosRoutingModule,
@@ -23,6 +25,7 @@ import { MatChipsModule } from '@angular/material/chips'; //teste
     MatButtonToggleModule,
     MatProgressSpinnerModule,
     MatChipsModule,
+    MatFormFieldModule,
   ],
 })
 export class AnunciosModule {}
