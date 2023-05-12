@@ -34,12 +34,12 @@ export class LoginComponent implements OnInit {
     console.log(email, senha);
 
     this.LoginService.autentica(email, senha).subscribe(
-      () => this.router.navigateByUrl('/anuncios'), //Da para usar o navigate([/anuncios, nome do usuario logado ou sla ])
-      (err) => {
+      () => this.router.navigateByUrl('/anuncios'),
+     /*  (err) => {
         console.log(err);
         this.loginFormulario.reset();
         alert('Email ou senha invalidos.');
-      }
+      } */
     );
   }
 }

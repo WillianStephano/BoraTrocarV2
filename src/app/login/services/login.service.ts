@@ -20,8 +20,9 @@ export class LoginService {
       )
       .pipe(
         tap((res) => {
-          const tokenDeAutenticacao = res.headers.get('x-access-token');
+          const tokenDeAutenticacao = res.body;
           this.tokenService.setToken(tokenDeAutenticacao);
+          console.log(tokenDeAutenticacao);
 
           window.localStorage.setItem('emailUser', email);
 
