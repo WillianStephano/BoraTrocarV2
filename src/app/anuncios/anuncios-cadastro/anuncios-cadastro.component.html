@@ -1,9 +1,13 @@
-<!-- <form [formGroup]="cadastroAnuncioFormulario" class="form-cadastro-anuncio">
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Enter some input</mat-label>
-      <input placeholder="Ex. Nougat" />
+<mat-card class="card-cadastro-anuncio">
+  <form formGroup="cadastroAnuncioFormulario">
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
     </mat-form-field>
-  </div>
-</form>
- -->
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+  </form>
+</mat-card>
