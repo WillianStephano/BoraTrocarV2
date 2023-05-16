@@ -1,7 +1,5 @@
-
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
 
 @Component({
   selector: 'app-anuncios-cadastro',
@@ -9,14 +7,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./anuncios-cadastro.component.scss'],
 })
 export class AnunciosCadastroComponent {
-  cadastroAnuncioFormulario: FormGroup = new FormGroup({});
+  cadastroAnunciosFormulario: FormGroup = new FormGroup({});
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.cadastroAnuncioFormulario = this.formBuilder.group({
-      tituloLivro: [null],
-      autorLivro: [null],
-    });
+    this.cadastroAnunciosFormulario = this.formBuilder.group({});
   }
 }

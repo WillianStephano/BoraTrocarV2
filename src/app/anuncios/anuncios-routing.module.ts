@@ -5,8 +5,7 @@ import { AnunciosCadastroComponent } from './anuncios-cadastro/anuncios-cadastro
 
 const routes: Routes = [
   { path: '', component: AnunciosComponent },
-  { path: 'novo', component:  AnunciosCadastroComponent},
-
+  { path: 'novo', component: AnunciosCadastroComponent },
 ];
 
 @NgModule({

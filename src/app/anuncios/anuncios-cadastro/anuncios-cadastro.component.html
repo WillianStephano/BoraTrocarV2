@@ -1,13 +1,28 @@
-<mat-card class="card-cadastro-anuncio">
-  <form formGroup="cadastroAnuncioFormulario">
-    <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+<mat-card class="cadastro-anuncio">
+  <form
+    action="/submit-form"
+    method="post"
+    [formGroup]="cadastroAnunciosFormulario"
+  >
+    <img src="https://via.placeholder.com/150" alt="Foto de perfil" />
+
+    <mat-form-field>
+      <mat-label>Titulo do livro</mat-label>
+      <input matInput type="text" formControlName="tituloLivro" />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    <mat-form-field>
+      <mat-label>Autor</mat-label>
+      <input matInput type="text" formControlName="autorLivro" />
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descreva o livro</mat-label>
+      <textarea rows="8" matInput formControlName="descricaoLivro"></textarea>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">Publicar anuncio</button>
+    </mat-card-actions>
   </form>
 </mat-card>

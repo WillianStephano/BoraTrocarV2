@@ -1,10 +1,17 @@
-.card-cadastro-anuncio {
-  width: 70%;
-  margin: 2% auto;
+.cadastro-anuncio {
+  width: 80%;
+  padding: 3%;
+  margin: 3% auto;
 
   form {
     width: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
+    row-gap: 5px;
+
+    mat-form-field {
+      width: 70%;
+    }
   }
 }
