@@ -23,6 +23,5 @@ export class CadastroUsuarioService {
       senha,
       dataNascimento,
     });
-    console.log(nomeUsuario, email, nickname, senha, dataNascimento);
   }
 }

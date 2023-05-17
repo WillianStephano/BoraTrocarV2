@@ -25,7 +25,7 @@ export class CadastroUsuarioComponent {
         [
           Validators.required,
           Validators.minLength(5),
-          Validators.maxLength(20),
+          Validators.maxLength(50),
           Validators.pattern(/^[a-zA-Z\s]*$/),
         ],
       ],
@@ -71,10 +71,10 @@ export class CadastroUsuarioComponent {
       nickname,
       senha,
       dataNascimento
-    ).subscribe(
-      () => this.router.navigateByUrl('/login'),
-      () => console.log('Usuario cadastrado')
-    );
+    ).subscribe(() => {
+      alert('Cadastro efetuado com sucesso');
+      this.router.navigateByUrl('/login');
+    });
   }
 
   limpar() {

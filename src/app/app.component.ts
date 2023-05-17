@@ -11,4 +11,11 @@ export class AppComponent {
   title = 'FalaMansa';
 
   emailUser = localStorage.getItem('emailUser');
+
+  //Essa implementação ta errada, mas é oq tem para hj
+  deslogar() {
+    this.loginService.deslogar();
+    localStorage.removeItem('emailUser');
+    window.location.reload();
+  }
 }

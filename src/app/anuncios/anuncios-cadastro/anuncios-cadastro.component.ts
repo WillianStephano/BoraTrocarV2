@@ -12,6 +12,10 @@ export class AnunciosCadastroComponent {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.cadastroAnunciosFormulario = this.formBuilder.group({});
+    this.cadastroAnunciosFormulario = this.formBuilder.group({
+      tituloLivro: [''],
+      autorLivro: [''],
+      descricaoLivro: [''],
+    });
   }
 }

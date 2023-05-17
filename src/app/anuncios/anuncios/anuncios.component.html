@@ -2,7 +2,6 @@
 <div class="container" *ngIf="anuncios$ | async as anuncios; else carregando">
   <mat-card class="card" *ngFor="let anuncio of anuncios$ | async">
     <mat-card-header style="width: 100%">
-
       <mat-card-title>{{ anuncio.tituloLivro }}</mat-card-title>
     </mat-card-header>
 
@@ -16,17 +15,27 @@
     </div>
 
     <mat-card-content>
-      <p class="autor">  Autor: {{ anuncio.autorLivro }}</p>
-      <p class="genero">  Genero: {{ anuncio.generoLivro }}</p>
-      <p class="descricao"> <span> Descrição:</span> {{ anuncio.descricaoLivro }}</p>
-     <!-- Img de perfil -->
-     <div mat-card-avatar class="img-perfil-anunciante"></div>
-      <p class="anunciante"> <span> Anunciante:</span> {{ anuncio.anunciante }}</p>
+      <p class="autor">Autor: {{ anuncio.autorLivro }}</p>
+      <p class="genero">Genero: {{ anuncio.generoLivro }}</p>
+      <p class="descricao">
+        <span> Descrição:</span> {{ anuncio.descricaoLivro }}
+      </p>
+      <!-- Img de perfil -->
+      <div mat-card-avatar class="img-perfil-anunciante"></div>
+      <p class="anunciante">
+        <span> Anunciante:</span> {{ anuncio.anunciante }}
+      </p>
     </mat-card-content>
   </mat-card>
 </div>
 
-<button class="btn-add" mat-icon-button color="warn" aria-label="Adicionar um curso" (click)="criaUmAnuncio()">
+<button
+  class="btn-add"
+  mat-icon-button
+  color="warn"
+  *ngIf="loginService.estaAutenticado()"
+  (click)="criaUmAnuncio()"
+>
   <mat-icon>add</mat-icon>
 </button>
 

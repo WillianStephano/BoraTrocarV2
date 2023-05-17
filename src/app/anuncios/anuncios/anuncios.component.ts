@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Anuncio } from '../model/anuncio';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'src/app/login/services/login.service';
 
 @Component({
   selector: 'app-anuncios',
@@ -14,6 +15,7 @@ export class AnunciosComponent {
 
   constructor(
     private AnunciosService: AnunciosService,
+    public loginService: LoginService,
     private router: Router,
     private route: ActivatedRoute
   ) {

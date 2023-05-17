@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastroUsuario', component: CadastroUsuarioComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'novo', component:  AnunciosCadastroComponent},
+  { path: 'novo', component: AnunciosCadastroComponent },
   {
     //Somente quando o caminho chamado for "/anuncios" que sera carregado o componente anuncios.
     path: 'anuncios',

@@ -29,7 +29,13 @@ export class LoginService {
   }
 
   estaAutenticado(): boolean {
-    const tokenDeAutenticacao = this.tokenService.getToken();
-    return tokenDeAutenticacao !== null;
+    if (this.tokenService.getToken() !== null) {
+      return true;
+    }
+    return false;
+  }
+
+  public deslogar() {
+    this.tokenService.removeToken();
   }
 }

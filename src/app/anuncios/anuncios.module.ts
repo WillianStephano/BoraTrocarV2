@@ -29,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
 export class AnunciosModule {}

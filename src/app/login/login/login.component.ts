@@ -35,11 +35,11 @@ export class LoginComponent implements OnInit {
 
     this.LoginService.autentica(email, senha).subscribe(
       () => this.router.navigateByUrl('/anuncios'),
-     /*  (err) => {
+      (err) => {
         console.log(err);
         this.loginFormulario.reset();
         alert('Email ou senha invalidos.');
-      } */
+      }
     );
   }
 }
