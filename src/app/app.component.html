@@ -32,6 +32,7 @@
 
       <button
         mat-button
+        *ngIf="!emailUser"
         [routerLink]="['/login']"
         routerLinkActive="router-link-active"
       >
@@ -48,7 +49,10 @@
         Anuncios
       </button>
 
-      <button (click)="deslogar()"></button>
+      <button mat-button *ngIf="emailUser" (click)="deslogar()">
+        <i class="material-icons">exit_to_app</i>
+        Sair
+      </button>
     </div>
   </section>
 </mat-toolbar>
