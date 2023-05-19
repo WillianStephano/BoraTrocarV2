@@ -28,16 +28,20 @@
     </mat-card-content>
   </mat-card>
 </div>
+  <mat-card-actions>
+    <button
+      class="btn-add"
+      mat-fab
+      extended
+      color="primary"
+      *ngIf="loginService.estaAutenticado()"
+      (click)="criaUmAnuncio()"
+    >
+      <mat-icon>add</mat-icon>
+      Crie um anuncio
+    </button>
+  </mat-card-actions>
 
-<button
-  class="btn-add"
-  mat-icon-button
-  color="warn"
-  *ngIf="loginService.estaAutenticado()"
-  (click)="criaUmAnuncio()"
->
-  <mat-icon>add</mat-icon>
-</button>
 
 <!-- Tamplate de loading enquanto aguarda os dados -->
 <ng-template #carregando>

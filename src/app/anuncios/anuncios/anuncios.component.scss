@@ -58,8 +58,12 @@
   }
 }
 
-.btn-add{
-  background-color: rgb(207, 207, 207);
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-add {
 }
 
 .container {

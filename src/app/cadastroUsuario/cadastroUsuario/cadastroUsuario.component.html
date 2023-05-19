@@ -20,7 +20,7 @@
           cadastroUsuarioFormulario.get('nomeUsuario')?.value
         "
       >
-        5 a 20 caracteres apenas letras
+        minimo de 5 caracteres A-Z
       </small>
     </mat-form-field>
 
@@ -69,7 +69,13 @@
     </mat-form-field>
 
     <mat-card-actions>
-      <button mat-stroked-button color="primary">Cadastro</button>
+      <button
+        mat-stroked-button
+        [disabled]="cadastroUsuarioFormulario.invalid"
+        color="primary"
+      >
+        Cadastro
+      </button>
       <button (click)="limpar()" mat-stroked-button color="warn">Limpar</button>
     </mat-card-actions>
   </form>

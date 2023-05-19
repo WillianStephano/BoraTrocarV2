@@ -14,7 +14,7 @@ export class AnunciosService {
   constructor(private httpClient: HttpClient) {}
 
   listaTudo() {
-    return this.httpClient.get<Anuncio[]>(this.URL).pipe(delay(1));
+    return this.httpClient.get<Anuncio[]>(this.URL).pipe();
 
     // Pipe para dar um log no json que esta vindo da "API"
     //.pipe(tap((postagens) => console.log(postagens)));
