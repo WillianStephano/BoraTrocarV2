@@ -14,7 +14,7 @@ export class CadastroUsuarioComponent {
   constructor(
     private formBuilder: FormBuilder,
     private CadastroUsuarioService: CadastroUsuarioService,
-    private router: Router //private router: Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -57,13 +57,11 @@ export class CadastroUsuarioComponent {
   }
 
   cadastrarUsuario() {
-    const nomeUsuario =
-      this.cadastroUsuarioFormulario.get('nomeUsuario')?.value;
+    const nomeUsuario = this.cadastroUsuarioFormulario.get('nomeUsuario')?.value;
     const email = this.cadastroUsuarioFormulario.get('email')?.value;
     const nickname = this.cadastroUsuarioFormulario.get('nickname')?.value;
     const senha = this.cadastroUsuarioFormulario.get('senha')?.value;
-    const dataNascimento =
-      this.cadastroUsuarioFormulario.get('dataNascimento')?.value;
+    const dataNascimento = this.cadastroUsuarioFormulario.get('dataNascimento')?.value;
 
     this.CadastroUsuarioService.insereNoBanco(
       nomeUsuario,

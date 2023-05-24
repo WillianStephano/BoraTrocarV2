@@ -21,11 +21,15 @@ export class LoginService {
       .pipe(
         tap((res) => {
           const tokenDeAutenticacao = res.body;
-          this.tokenService.setToken(tokenDeAutenticacao);
           window.localStorage.setItem('emailUser', email);
+
+          //MANO ESSA GAMBIARRA PARA TRATAR O TOKEN PARA STRING KKKKKKKK
+          let tokenString: any = JSON.stringify(tokenDeAutenticacao);
+          tokenString = tokenString.split(':');
+          this.tokenService.setToken(tokenString[1]);
+          console.log(tokenString[1]);
         })
       );
-    //pega o header do response e extrai dele o token de autenticação do usuario
   }
 
   estaAutenticado(): boolean {
