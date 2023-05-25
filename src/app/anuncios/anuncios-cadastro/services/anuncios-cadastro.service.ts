@@ -19,7 +19,7 @@ export class CadastroAnunciosService {
     categoria: string
   ) {
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.tokenService.getToken()}`,
+      Authorization: `${this.tokenService.getToken()}`,
     });
 
     return this.http.post(
