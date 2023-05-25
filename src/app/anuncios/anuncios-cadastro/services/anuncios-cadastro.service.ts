@@ -1,5 +1,5 @@
 import { TokenService } from './../../../login/login/token/token.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -10,15 +10,29 @@ export class CadastroAnunciosService {
 
   constructor(private http: HttpClient, private tokenService: TokenService) {}
 
-  insere(tituloLivro: string, autorLivro: string, descricaoLivro: string) {
-    const headers = new Headers();
-    return this.http.post(this.API + `/livro/cadastrar`, {
-      headers: {
-        Authorization: `${this.tokenService.getToken()}`,
-      },
-      tituloLivro,
-      autorLivro,
-      descricaoLivro,
+  insere(
+    isbn: string,
+    nomeLivro: string,
+    autor: string,
+    // descricaoLivro: string,
+    condicao: string,
+    categoria: string
+  ) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`,
     });
+
+    return this.http.post(
+      this.API + `/livro/cadastrar`,
+      {
+        isbn,
+        nomeLivro,
+        autor,
+        // descricaoLivro,
+        condicao,
+        categoria,
+      },
+      { headers }
+    );
   }
 }

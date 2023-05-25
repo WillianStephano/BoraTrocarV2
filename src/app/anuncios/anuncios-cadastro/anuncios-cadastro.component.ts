@@ -19,20 +19,32 @@ export class AnunciosCadastroComponent {
 
   ngOnInit(): void {
     this.cadastroAnunciosFormulario = this.formBuilder.group({
-      tituloLivro: [''],
-      autorLivro: [''],
-      descricaoLivro: [''],
+      isbn: [''],
+      nomeLivro: [''],
+      autor: [''],
+     // descricaoLivro: [''],
+      condicao: [''],
+      categoria: [''],
     });
   }
 
   cadastrarAnuncio() {
-    const tituloLivro = this.cadastroAnunciosFormulario.get('tituloLivro')?.value;
-    const autorLivro = this.cadastroAnunciosFormulario.get('autorLivro')?.value;
-    const descricaoLivro = this.cadastroAnunciosFormulario.get('descricaoLivro')?.value;
-    console.log('cadastra anuncio');
+    const isbn = this.cadastroAnunciosFormulario.get('isbn')?.value;
+    const nomeLivro = this.cadastroAnunciosFormulario.get('nomeLivro')?.value;
+    const autor = this.cadastroAnunciosFormulario.get('autor')?.value;
+   // const descricaoLivro = this.cadastroAnunciosFormulario.get('descricaoLivro')?.value;
+    const condicao = this.cadastroAnunciosFormulario.get('condicao')?.value;
+    const categoria = this.cadastroAnunciosFormulario.get('categoria')?.value;
 
     this.cadastroAnunciosService
-      .insere(tituloLivro, autorLivro, descricaoLivro)
+      .insere(
+        isbn,
+        nomeLivro,
+        autor,
+       // descricaoLivro,
+        condicao,
+        categoria
+      )
       .subscribe(() => {
         alert('Cadastro efetuado com sucesso');
         this.router.navigateByUrl('/anuncios');

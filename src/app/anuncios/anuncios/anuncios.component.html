@@ -2,7 +2,7 @@
 <div class="container" *ngIf="anuncios$ | async as anuncios; else carregando">
   <mat-card class="card" *ngFor="let anuncio of anuncios$ | async">
     <mat-card-header style="width: 100%">
-      <mat-card-title>{{ anuncio.tituloLivro }}</mat-card-title>
+      <mat-card-title>{{ anuncio.nomeLivro }}</mat-card-title>
     </mat-card-header>
 
     <!-- Tem dar uma olhada no caminho da img do livro la mo b.o -->
@@ -15,7 +15,7 @@
     </div>
 
     <mat-card-content>
-      <p class="autor">Autor: {{ anuncio.autorLivro }}</p>
+      <p class="autor">Autor: {{ anuncio.autor }}</p>
       <p class="genero">Genero: {{ anuncio.generoLivro }}</p>
       <p class="descricao">
         <span> Descrição:</span> {{ anuncio.descricaoLivro }}
