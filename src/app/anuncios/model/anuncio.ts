@@ -1,5 +1,5 @@
 export interface Anuncio {
-  _id: string;
+  idLivro: number;
   isbn: string;
   nomeLivro: string;
   autor: {
