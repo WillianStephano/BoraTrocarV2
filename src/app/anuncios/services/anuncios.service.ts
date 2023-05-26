@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Anuncio } from '../model/anuncio';
 import { HttpClient } from '@angular/common/http';
-import { delay } from 'rxjs';
+import { delay, tap } from 'rxjs';
 //import { tap } from 'rxjs'; para debugar.
 
 @Injectable({
@@ -9,14 +9,13 @@ import { delay } from 'rxjs';
 })
 export class AnunciosService {
   //Caminho para API como readonly para evitar merda.
-  private readonly URL = '../../../assets/anuncios.json';
+  private readonly URL = 'http://localhost:8090/livro/all';
 
   constructor(private httpClient: HttpClient) {}
 
   listaTudo() {
-    return this.httpClient.get<Anuncio[]>(this.URL).pipe();
-
-    // Pipe para dar um log no json que esta vindo da "API"
-    //.pipe(tap((postagens) => console.log(postagens)));
+    return this.httpClient
+      .get<Anuncio[]>(this.URL)
+      .pipe(tap((postagens) => console.log(postagens)));
   }
 }

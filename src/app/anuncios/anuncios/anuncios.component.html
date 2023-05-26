@@ -5,43 +5,43 @@
       <mat-card-title>{{ anuncio.nomeLivro }}</mat-card-title>
     </mat-card-header>
 
-    <!-- Tem dar uma olhada no caminho da img do livro la mo b.o -->
+    <!-- https://via.placeholder.com/450 qualquer coisa usa esse placeholder de img -->
     <div class="img-livro">
       <img
         mat-card-image
-        src="{{ anuncio.imgLivro }}"
+        src="https://fakeimg.pl/450x450?text=Img+Livro"
         alt="Imagem do livro anunciado"
       />
     </div>
 
     <mat-card-content>
-      <p class="autor">Autor: {{ anuncio.autor }}</p>
-      <p class="genero">Genero: {{ anuncio.generoLivro }}</p>
+      <p class="autor">Autor: {{ anuncio.autor.nomeAutor }}</p>
+      <p class="genero">Categoria: {{ anuncio.categoria.nomeCategoria }}</p>
+      <p class="isbn">ISBN: {{ anuncio.isbn }}</p>
       <p class="descricao">
-        <span> Descrição:</span> {{ anuncio.descricaoLivro }}
+        <span> Descrição:</span> {{ anuncio.descricao }}
       </p>
       <!-- Img de perfil -->
       <div mat-card-avatar class="img-perfil-anunciante"></div>
       <p class="anunciante">
-        <span> Anunciante:</span> {{ anuncio.anunciante }}
+        <span> Anunciante:</span> {{ anuncio.usuario.nomeUsuario }}
       </p>
     </mat-card-content>
   </mat-card>
 </div>
-  <mat-card-actions>
-    <button
-      class="btn-add"
-      mat-fab
-      extended
-      color="primary"
-      *ngIf="loginService.estaAutenticado()"
-      (click)="criaUmAnuncio()"
-    >
-      <mat-icon>add</mat-icon>
-      Crie um anuncio
-    </button>
-  </mat-card-actions>
-
+<mat-card-actions>
+  <button
+    class="btn-add"
+    mat-fab
+    extended
+    color="primary"
+    *ngIf="loginService.estaAutenticado()"
+    (click)="criaUmAnuncio()"
+  >
+    <mat-icon>add</mat-icon>
+    Crie um anuncio
+  </button>
+</mat-card-actions>
 
 <!-- Tamplate de loading enquanto aguarda os dados -->
 <ng-template #carregando>

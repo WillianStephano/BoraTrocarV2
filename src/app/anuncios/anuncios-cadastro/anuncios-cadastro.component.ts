@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CadastroAnunciosService } from './services/anuncios-cadastro.service';
 import { Router } from '@angular/router';
 
@@ -19,12 +19,12 @@ export class AnunciosCadastroComponent {
 
   ngOnInit(): void {
     this.cadastroAnunciosFormulario = this.formBuilder.group({
-      isbn: [''],
-      nomeLivro: [''],
+      isbn: [[''], Validators.pattern(/^[0-9-]+$/)],
+      nomeLivro: ['', [Validators.required]],
       autor: [''],
-     // descricaoLivro: [''],
-      condicao: [''],
-      categoria: [''],
+      condicao: ['', [Validators.required]],
+      categoria: ['', [Validators.required]],
+      descricao: [''],
     });
   }
 
@@ -32,21 +32,14 @@ export class AnunciosCadastroComponent {
     const isbn = this.cadastroAnunciosFormulario.get('isbn')?.value;
     const nomeLivro = this.cadastroAnunciosFormulario.get('nomeLivro')?.value;
     const autor = this.cadastroAnunciosFormulario.get('autor')?.value;
-   // const descricaoLivro = this.cadastroAnunciosFormulario.get('descricaoLivro')?.value;
     const condicao = this.cadastroAnunciosFormulario.get('condicao')?.value;
     const categoria = this.cadastroAnunciosFormulario.get('categoria')?.value;
+    const descricao = this.cadastroAnunciosFormulario.get('descricao')?.value;
 
     this.cadastroAnunciosService
-      .insere(
-        isbn,
-        nomeLivro,
-        autor,
-       // descricaoLivro,
-        condicao,
-        categoria
-      )
+      .insere(isbn, nomeLivro, autor, condicao, categoria, descricao)
       .subscribe(() => {
-        alert('Cadastro efetuado com sucesso');
+        alert('Livro cadastrado com sucesso');
         this.router.navigateByUrl('/anuncios');
       });
   }

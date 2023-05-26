@@ -14,9 +14,9 @@ export class CadastroAnunciosService {
     isbn: string,
     nomeLivro: string,
     autor: string,
-    // descricaoLivro: string,
     condicao: string,
-    categoria: string
+    categoria: string,
+    descricao: string
   ) {
     const headers = new HttpHeaders({
       Authorization: `${this.tokenService.getToken()}`,
@@ -28,9 +28,9 @@ export class CadastroAnunciosService {
         isbn,
         nomeLivro,
         autor,
-        // descricaoLivro,
         condicao,
         categoria,
+        descricao,
       },
       { headers }
     );

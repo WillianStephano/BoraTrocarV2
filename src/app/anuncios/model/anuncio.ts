@@ -1,9 +1,17 @@
 export interface Anuncio {
   _id: string;
+  isbn: string;
   nomeLivro: string;
-  autor: string;
-  generoLivro: string;
-  descricaoLivro: string;
-  anunciante: string;
-  imgLivro: string;
+  autor: {
+    nomeAutor: string;
+  };
+  categoria: {
+    nomeCategoria: string;
+  };
+  nomeCondicao: string;
+  descricao: string;
+  usuario: {
+    nomeUsuario: string;
+  };
+  imgLivro: '';
 }
