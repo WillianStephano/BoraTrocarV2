@@ -11,6 +11,7 @@
         *ngIf="loginService.estaAutenticado()"
         routerLink="/perfil"
         routerLinkActive="router-link-active"
+        (click)="listaInfoPerfil()"
       >
         <i class="material-icons">person</i>
         <ng-container *ngIf="emailUser; else userVazio">

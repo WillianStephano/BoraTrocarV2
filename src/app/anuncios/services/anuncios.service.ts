@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Anuncio } from '../model/anuncio';
 import { HttpClient } from '@angular/common/http';
 import { delay, tap } from 'rxjs';
-//import { tap } from 'rxjs'; para debugar.
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login/services/login.service';
+import { PerfilService } from './perfil/service/perfil.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,22 @@ import { LoginService } from './login/services/login.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(public loginService: LoginService) {}
+  constructor(
+    public loginService: LoginService,
+    public perfilService: PerfilService
+  ) {}
   title = 'FalaMansa';
 
   emailUser = localStorage.getItem('emailUser');
 
-  //Essa implementação ta errada, mas é oq tem para hj
-  deslogar() {
+  //Essa implementação esta errada, mas é oq tem para hoje
+  deslogar(): void {
     this.loginService.deslogar();
     localStorage.removeItem('emailUser');
     window.location.reload();
+  }
+
+  listaInfoPerfil(): void {
+    this.perfilService.listaInfoPerfil();
   }
 }
