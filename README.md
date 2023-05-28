@@ -1,6 +1,6 @@
 # BoraTrocarV2
 
-Esse projeto foi desenvolvido utilizando o [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5 e durante o desenvolvimento foi atualizado para versão 16.0.1
+Esse projeto foi iniciado utilizando o [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5 e durante o desenvolvimento foi atualizado para versão 16.0.1
 ### Clonando o projeto
 Execute o comando abaixo no terminal:
 ```
