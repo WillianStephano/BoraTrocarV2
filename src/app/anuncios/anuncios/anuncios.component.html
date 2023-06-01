@@ -1,6 +1,6 @@
 <!-- O ngIf é tipo um If ternario, e caso essa caralha nao puxe as info do observable ele vai rodar o tamplete "carregando" que ta la no final. -->
 <div class="container" *ngIf="anuncios$ | async as anuncios; else carregando">
-  <mat-card class="card" *ngFor="let anuncio of anuncios$ | async">
+  <mat-card (click)="abrirAnuncio(anuncio.idLivro)" class="card" *ngFor="let anuncio of anuncios$ | async">
     <mat-card-header style="width: 100%">
       <mat-card-title>{{ anuncio.nomeLivro }}</mat-card-title>
     </mat-card-header>
@@ -9,7 +9,7 @@
     <div class="img-livro">
       <img
         mat-card-image
-        src="https://fakeimg.pl/450x450?text=Img+Livro"
+        src="https://placehold.co/450x450?text=Img+Livro"
         alt="Imagem do livro anunciado"
       />
     </div>

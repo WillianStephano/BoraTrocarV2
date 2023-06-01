@@ -15,9 +15,10 @@ import { PerfilModule } from './perfil/perfil.module';
 import { AuthGuard } from './guards/auth-guard';
 import { AnunciosGuard } from './guards/anuncios-guard';
 
+
 //Tudo que é modulo tem q estar aqui lembre-se disso.
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,

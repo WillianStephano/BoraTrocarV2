@@ -1,6 +1,6 @@
+import { Anuncio } from './../model/anuncio';
 import { AnunciosService } from './../services/anuncios.service';
-import { Component } from '@angular/core';
-import { Anuncio } from '../model/anuncio';
+import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from 'src/app/login/services/login.service';
@@ -25,6 +25,12 @@ export class AnunciosComponent {
   criaUmAnuncio() {
     this.router.navigate(['novo'], { relativeTo: this.route });
     //pega a rota atual como base e adiciona a nova
+  }
+
+  abrirAnuncio(id: number) {
+    return (
+      this.router.navigate(['livro']), this.AnunciosService.pegarAnuncio(id)
+    );
   }
 
   ngOnInit(): void {}

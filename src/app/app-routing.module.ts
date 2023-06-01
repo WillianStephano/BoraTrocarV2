@@ -6,6 +6,7 @@ import { PerfilComponent } from './perfil/perfil/perfil.component';
 import { AnunciosCadastroComponent } from './anuncios/anuncios-cadastro/anuncios-cadastro.component';
 import { AuthGuard } from './guards/auth-guard';
 import { AnunciosGuard } from './guards/anuncios-guard';
+import { AnuncioAbertoComponent } from './anuncios/anuncio-aberto/anuncio-aberto.component';
 
 const routes: Routes = [
   //Se o caminho for so "localhost/" ele vai redirecionar para "anuncios".
@@ -25,6 +26,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./anuncios/anuncios.module').then((m) => m.AnunciosModule),
   },
+  {path: 'livro', component: AnuncioAbertoComponent}
 ];
 
 @NgModule({

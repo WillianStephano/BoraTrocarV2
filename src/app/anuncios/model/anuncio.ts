@@ -8,7 +8,9 @@ export interface Anuncio {
   categoria: {
     nomeCategoria: string;
   };
-  nomeCondicao: string;
+  condicao: {
+    nomeCondicao: string;
+  };
   descricao: string;
   usuario: {
     nomeUsuario: string;
