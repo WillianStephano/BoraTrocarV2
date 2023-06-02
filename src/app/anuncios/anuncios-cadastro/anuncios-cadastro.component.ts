@@ -3,6 +3,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CadastroAnunciosService } from './services/anuncios-cadastro.service';
 import { Router } from '@angular/router';
 
+interface Condicao {
+  value: string;
+  valorVisualizado: string;
+}
+
 @Component({
   selector: 'app-anuncios-cadastro',
   templateUrl: './anuncios-cadastro.component.html',
@@ -10,6 +15,13 @@ import { Router } from '@angular/router';
 })
 export class AnunciosCadastroComponent {
   cadastroAnunciosFormulario: FormGroup = new FormGroup({});
+  valorSelecionado: string = '';
+
+  condicoes: Condicao[] = [
+    { value: 'novo', valorVisualizado: 'Novo' },
+    { value: 'usado', valorVisualizado: 'Usado' },
+    { value: 'avariado', valorVisualizado: 'Avariado' },
+  ];
 
   constructor(
     private formBuilder: FormBuilder,

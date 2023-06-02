@@ -13,11 +13,16 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AnuncioAbertoComponent } from './anuncio-aberto/anuncio-aberto.component';
 
 @NgModule({
-  declarations: [AnunciosComponent, AnunciosCadastroComponent, AnuncioAbertoComponent],
+  declarations: [
+    AnunciosComponent,
+    AnunciosCadastroComponent,
+    AnuncioAbertoComponent,
+  ],
   imports: [
     CommonModule,
     AnunciosRoutingModule,
@@ -31,6 +36,7 @@ import { AnuncioAbertoComponent } from './anuncio-aberto/anuncio-aberto.componen
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSelectModule,
   ],
 })
 export class AnunciosModule {}
