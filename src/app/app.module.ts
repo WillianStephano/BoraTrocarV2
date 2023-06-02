@@ -9,16 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { LoginModule } from './login/login.module';
 import { CadastroUsuarioModule } from './cadastroUsuario/cadastroUsuario.module';
 import { PerfilModule } from './perfil/perfil.module';
 import { AuthGuard } from './guards/auth-guard';
 import { AnunciosGuard } from './guards/anuncios-guard';
 
-
 //Tudo que é modulo tem q estar aqui lembre-se disso.
 @NgModule({
-  declarations: [AppComponent, ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +31,7 @@ import { AnunciosGuard } from './guards/anuncios-guard';
     MatButtonModule,
     CadastroUsuarioModule,
     PerfilModule,
+    MatSelectModule,
   ],
   providers: [AuthGuard, AnunciosGuard],
   bootstrap: [AppComponent],
