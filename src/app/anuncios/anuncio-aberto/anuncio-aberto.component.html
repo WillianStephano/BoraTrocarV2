@@ -5,14 +5,15 @@
   </mat-card-header>
   <img
     mat-card-image
-    src="https://placehold.co/530x530?text=Img+Livro"
+    src="https://placehold.co/350x350?text=Img+Livro"
     alt="Capa do livro"
   />
   <mat-card-content>
-    <p>Categoria:{{ anuncio.categoria.nomeCategoria }}</p>
-    <p>Condição{{ anuncio.condicao.nomeCondicao }}</p>
-    <p>Descrição:{{ anuncio.descricao }}</p>
-    <p>Anunciante:{{ anuncio.usuario.nomeUsuario }}</p>
+    <p><strong>ISBN:</strong>{{ anuncio.isbn }}</p>
+    <p><strong>Categoria:</strong>{{ anuncio.categoria.nomeCategoria }}</p>
+    <p><strong>Condição:</strong>{{ anuncio.condicao.nomeCondicao }}</p>
+    <p><strong>Descrição:</strong>{{ anuncio.descricao }}</p>
+    <p><strong>Anunciante:</strong>{{ anuncio.usuario.nomeUsuario }}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-stroked-button color="primary" mat-button>Chat</button>
