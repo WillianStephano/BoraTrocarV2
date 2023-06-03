@@ -28,9 +28,7 @@ export class AnunciosComponent {
   }
 
   abrirAnuncio(id: number) {
-    return (
-      this.router.navigate(['livro']), this.AnunciosService.pegarAnuncio(id)
-    );
+    return this.router.navigate([`livro/${id}`]);
   }
 
   ngOnInit(): void {}

@@ -1,7 +1,9 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnunciosService } from './../services/anuncios.service';
 import { Component, Input } from '@angular/core';
 import { Anuncio } from '../model/anuncio';
 import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs';
 
 export interface MeuObjeto {
   token: string;
@@ -13,11 +15,20 @@ export interface MeuObjeto {
   styleUrls: ['./anuncio-aberto.component.scss'],
 })
 export class AnuncioAbertoComponent {
+  anuncio$: Observable<Anuncio> | null;
 
-  anuncio$: Observable<Anuncio>;
-  constructor(private anunciosService: AnunciosService) {
-    this.anuncio$ = this.anunciosService.pegarAnuncio(1);
-    console.log('cacete');
+  constructor(
+    private anunciosService: AnunciosService,
+    private route: ActivatedRoute
+  ) {
+    this.anuncio$ = null;
+  }
 
+  ngOnInit(): void {
+    var id = this.route.snapshot.paramMap.get('idLivro');
+    const idN = Number(id);
+
+    this.anuncio$ = this.anunciosService.pegarAnuncio(idN);
+    //this.anuncio$ = this.anunciosService.pegarAnuncio(1);
   }
 }

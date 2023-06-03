@@ -26,7 +26,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./anuncios/anuncios.module').then((m) => m.AnunciosModule),
   },
-  {path: 'livro', component: AnuncioAbertoComponent}
+  { path: 'livro/:idLivro', component: AnuncioAbertoComponent },
 ];
 
 @NgModule({
