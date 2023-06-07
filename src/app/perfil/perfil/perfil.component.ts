@@ -19,5 +19,9 @@ export class PerfilComponent {
     this.perfil$ = this.perfilService.listaInfoPerfil();
   }
 
+  deletaAnuncio(idLivro: number) {
+    this.perfilService.apagaAnuncio(idLivro);
+  }
+
   ngOnInit(): void {}
 }

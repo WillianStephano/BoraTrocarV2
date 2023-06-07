@@ -1,24 +1,38 @@
-<div class="container"  *ngIf="perfil$ | async as perfil;">
-  <h2>Perfil</h2>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ perfil.nomeCompleto }}</mat-card-title>
-    </mat-card-header>
+<div class="container" *ngIf="perfil$ | async as perfil">
+  <h1>Perfil</h1>
+  <mat-card class="card-perfil">
+    <div class="nome-titulo">
+      <h1> {{ perfil.nomeCompleto }}</h1>
+    </div>
 
-    <mat-card-content>
-      <div class="perfil">
+    <mat-card-content class="perfil">
+      <div class="user">
         <img src="https://via.placeholder.com/150" alt="Foto de perfil" />
-        <div class="user-info">
-          <p><strong>Nome de usuário:</strong> {{ perfil.nickname }}</p>
-          <p><strong>Email:</strong> {{ perfil.email }}</p>
-          <p>
-            <strong>Tipo de conta:</strong>
-            {{ perfil.tipoConta }}
-          </p>
-          <p><strong>Anúncios postados:</strong> {{ perfil.anunciosPostados[0].nomeLivro }}</p>
+        <p><span class="info">Nome de usuário:</span> {{ perfil.nickname }}</p>
+        <p><span class="info">Email:</span> {{ perfil.email }}</p>
+        <p>
+          <span class="info">Tipo de conta:</span>
+          {{ perfil.tipoConta }}
+        </p>
+        <h2 class="sub-titulo">Seus anuncios</h2>
+
+        <div class="teste">
+          <div
+            class="anuncios-card"
+            *ngFor="let anuncio of perfil.anunciosPostados"
+          >
+            <mat-card-header style="width: 100%">
+              <mat-card-title><span>Titulo: </span>{{ anuncio.nomeLivro }}</mat-card-title>
+              <mat-icon class="close" (click)="deletaAnuncio(anuncio.idLivro)" >close</mat-icon>
+            </mat-card-header>
+
+            <section>
+              <p class="isbn"><span>ISBN:</span> {{ anuncio.isbn }}</p>
+              <p class="descricao"><span> Descrição:</span> {{ anuncio.descricao }}</p>
+            </section>
+          </div>
         </div>
       </div>
     </mat-card-content>
-
   </mat-card>
 </div>

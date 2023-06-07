@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TokenService } from 'src/app/login/login/token/token.service';
 import { Perfil } from '../model/Perfil';
-import { tap } from 'rxjs';
+import { pipe, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +20,19 @@ export class PerfilService {
     return this.http
       .get<Perfil>(this.URL + `/usuario/perfil`, { headers })
       .pipe(tap((perfil) => console.log(perfil)));
+  }
+
+  apagaAnuncio(idLivro: number) {
+    const headers = new HttpHeaders({
+      Authorization: `${this.tokenService.getToken()}`,
+    });
+
+    return this.http
+      .delete(this.URL + `/livro/deletar/${idLivro}`, { headers })
+      .pipe(
+        tap(() => {
+          window.location.reload();
+        })
+      ).subscribe();
   }
 }
