@@ -9,6 +9,15 @@
       <button
         mat-button
         *ngIf="loginService.estaAutenticado()"
+        (click)="criaUmAnuncio()"
+      >
+        <i class="material-icons">add</i>
+        Crie um anuncio
+      </button>
+
+      <button
+        mat-button
+        *ngIf="loginService.estaAutenticado()"
         routerLink="/perfil"
         routerLinkActive="router-link-active"
         (click)="listaInfoPerfil()"
