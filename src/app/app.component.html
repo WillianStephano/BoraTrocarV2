@@ -7,19 +7,28 @@
           <span>Bora Trocar</span>
         </a>
 
-        <div class="menu-toolbar">
-          <button
-            mat-button
-            *ngIf="loginService.estaAutenticado()"
-            routerLink="/perfil"
-            routerLinkActive="router-link-active"
-            (click)="listaInfoPerfil()"
-          >
-            <i class="material-icons">person</i>
-            <ng-container *ngIf="emailUser; else userVazio">
-              {{ emailUser }}
-            </ng-container>
-          </button>
+    <div class="menu-toolbar">
+      <button
+        mat-button
+        *ngIf="loginService.estaAutenticado()"
+        (click)="criaUmAnuncio()"
+      >
+        <i class="material-icons">add</i>
+        Crie um anuncio
+      </button>
+
+      <button
+        mat-button
+        *ngIf="loginService.estaAutenticado()"
+        routerLink="/perfil"
+        routerLinkActive="router-link-active"
+        (click)="listaInfoPerfil()"
+      >
+        <i class="material-icons">person</i>
+        <ng-container *ngIf="emailUser; else userVazio">
+          {{ emailUser }}
+        </ng-container>
+      </button>
 
           <button
             mat-button

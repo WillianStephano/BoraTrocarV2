@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login/services/login.service';
 import { PerfilService } from './perfil/service/perfil.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { PerfilService } from './perfil/service/perfil.service';
 export class AppComponent {
   constructor(
     public loginService: LoginService,
-    public perfilService: PerfilService
+    public perfilService: PerfilService,
+    public router: Router,
+    public route: ActivatedRoute
   ) {}
   title = 'FalaMansa';
 
@@ -25,5 +28,10 @@ export class AppComponent {
 
   listaInfoPerfil(): void {
     this.perfilService.listaInfoPerfil();
+  }
+
+  criaUmAnuncio() {
+    this.router.navigate(['anuncios/novo'], { relativeTo: this.route });
+    //pega a rota atual como base e adiciona a nova
   }
 }
