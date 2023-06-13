@@ -49,3 +49,16 @@
 .content {
   flex: 1;
 }
+
+@media screen and (max-width: 500px) {
+  .menu-toolbar {
+    display: flex;
+    gap: 10px;
+
+    button {
+      font-size: 12px;
+      font-weight: 500;
+      gap: 5px;
+    }
+  }
+}

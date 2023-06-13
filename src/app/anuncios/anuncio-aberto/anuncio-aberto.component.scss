@@ -31,3 +31,10 @@
     font-weight: 600;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .card-livro-aberto {
+    width: 90%;
+  }
+}
+

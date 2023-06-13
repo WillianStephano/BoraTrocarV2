@@ -1,8 +1,15 @@
 .card-login {
   width: 40%;
   margin: 10% auto;
-  padding: 5% 6.5%;
+  padding: 2% 6.5% 4%;
   box-sizing: border-box;
+
+  h1 {
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #2196f3;
+  }
 
   form {
     display: flex;
@@ -22,7 +29,7 @@
       width: 40%;
       font-weight: 600;
       font-size: 1rem;
-      font-family: 'lato';
+      font-family: "lato";
 
       &:hover {
         background-color: #2196f3;
@@ -30,5 +37,12 @@
         color: #fff;
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-login {
+    width: 90%;
+
   }
 }

@@ -92,3 +92,13 @@ mat-card-actions {
     width: 17.5%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+
+    .card {
+      max-width: 70%;
+    }
+  }
+}
