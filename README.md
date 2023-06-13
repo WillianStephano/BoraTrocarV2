@@ -8,7 +8,7 @@ git clone https://github.com/WillianStephano/BoraTrocarV2.git
 ```
 ### Preparando o ambiente
 - É necessário ter o [NodeJS](https://nodejs.org/en/download) instalado na versão 16.14.0;
-- É necessário ter o [TypeScript](https://www.typescriptlang.org/download) na versão 4.9.3 que pode ser instalado pelo comando:
+- É recomendado ter o [TypeScript](https://www.typescriptlang.org/download) na versão 4.9.3 ou maior que pode ser instalado pelo comando:
 ```
 npm install typescript --save-dev
 ```
@@ -21,6 +21,6 @@ npm install -g @angular/cli
 ### Servidor de desenvolvimento
 Execute o comando abaixo no command prompt para executar o servidor de desenvolvimento do projeto:
 ```
-ng serve
+ng serve -o
 ``` 
-Navegue até `http://localhost:4200/` para acessar o projeto.
+O projeto sera executado em `http://localhost:4200/.
