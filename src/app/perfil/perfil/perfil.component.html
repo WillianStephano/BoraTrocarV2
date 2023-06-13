@@ -2,7 +2,7 @@
   <h1>Perfil</h1>
   <mat-card class="card-perfil">
     <div class="nome-titulo">
-      <h1> {{ perfil.nomeCompleto }}</h1>
+      <h1>{{ perfil.nomeCompleto }}</h1>
     </div>
 
     <mat-card-content class="perfil">
@@ -17,22 +17,36 @@
         <h2 class="sub-titulo">Seus anuncios</h2>
 
         <div class="teste">
-          <div
-            class="anuncios-card"
-            *ngFor="let anuncio of perfil.anunciosPostados"
+          <ng-container
+            *ngIf="perfil.anunciosPostados.length > 0; else anuncioVazio"
           >
-            <mat-card-header style="width: 100%">
-              <mat-card-title><span>Titulo: </span>{{ anuncio.nomeLivro }}</mat-card-title>
-              <mat-icon class="close" (click)="deletaAnuncio(anuncio.idLivro)" >close</mat-icon>
-            </mat-card-header>
+            <div
+              class="anuncios-card"
+              *ngFor="let anuncio of perfil.anunciosPostados"
+            >
+              <mat-card-header style="width: 100%">
+                <mat-card-title
+                  ><span>Titulo: </span>{{ anuncio.nomeLivro }}</mat-card-title
+                >
+                <mat-icon class="close" (click)="deletaAnuncio(anuncio.idLivro)"
+                  >close</mat-icon
+                >
+              </mat-card-header>
 
-            <section>
-              <p class="isbn"><span>ISBN:</span> {{ anuncio.isbn }}</p>
-              <p class="descricao"><span> Descrição:</span> {{ anuncio.descricao }}</p>
-            </section>
-          </div>
+              <section>
+                <p class="isbn"><span>ISBN:</span> {{ anuncio.isbn }}</p>
+                <p class="descricao">
+                  <span> Descrição:</span> {{ anuncio.descricao }}
+                </p>
+              </section>
+            </div>
+          </ng-container>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
 </div>
+
+<ng-template #anuncioVazio>
+  <div class="">Nenhum anuncio postado</div>
+</ng-template>
