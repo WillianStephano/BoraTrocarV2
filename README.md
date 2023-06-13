@@ -18,8 +18,14 @@ Execute o comando abaixo no terminal para a instalação do Angular:
 ```
 npm install -g @angular/cli
 ```
+
+### Instalando as dependencias do projeto
+Navegue ate o local em que o repositorio foi clonado e execute no terminal o comando:
+```
+npm install
+```
 ### Servidor de desenvolvimento
-Execute o comando abaixo no command prompt para executar o servidor de desenvolvimento do projeto:
+Execute o comando abaixo no command prompt para executar o servidor de desenvolvimento do projeto e o abrir automaticamente:
 ```
 ng serve -o
 ``` 
