@@ -19,9 +19,15 @@ export class AnuncioAbertoComponent {
 
   constructor(
     private anunciosService: AnunciosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.anuncio$ = null;
+  }
+
+  abrirChat() {
+    console.log('chat');
+    return this.router.navigate([`/chat`]);
   }
 
   ngOnInit(): void {

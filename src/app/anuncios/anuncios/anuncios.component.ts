@@ -1,8 +1,8 @@
 import { Anuncio } from './../model/anuncio';
 import { AnunciosService } from './../services/anuncios.service';
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { LoginService } from 'src/app/login/services/login.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { LoginService } from 'src/app/login/services/login.service';
 })
 export class AnunciosComponent {
   anuncios$: Observable<Anuncio[]>;
+  //private paginaRecarregada = false;
 
   constructor(
     private AnunciosService: AnunciosService,
@@ -20,6 +21,7 @@ export class AnunciosComponent {
     private route: ActivatedRoute
   ) {
     this.anuncios$ = this.AnunciosService.listaTudo();
+    //this.recarregarPagina();
   }
 
   criaUmAnuncio() {
@@ -31,5 +33,19 @@ export class AnunciosComponent {
     return this.router.navigate([`livro/${id}`]);
   }
 
-  ngOnInit(): void {}
+ /*  recarregarPagina() {
+    if (
+      !this.paginaRecarregada &&
+      this.router.url === '/anuncios' &&
+      this.loginService.estaAutenticado()
+    ) {
+      this.paginaRecarregada = true;
+      window.location.reload();
+      console.log('Página recarregada');
+    }
+  } */
+
+  ngOnInit() {
+
+  }
 }

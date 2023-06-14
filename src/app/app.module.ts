@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { LoginModule } from './login/login.module';
 import { CadastroUsuarioModule } from './cadastroUsuario/cadastroUsuario.module';
 import { PerfilModule } from './perfil/perfil.module';
+import { ChatModule } from './chat/chat.module';
 import { AuthGuard } from './guards/auth-guard';
 import { AnunciosGuard } from './guards/anuncios-guard';
 
@@ -32,6 +33,7 @@ import { AnunciosGuard } from './guards/anuncios-guard';
     CadastroUsuarioModule,
     PerfilModule,
     MatSelectModule,
+    ChatModule,
   ],
   providers: [AuthGuard, AnunciosGuard],
   bootstrap: [AppComponent],

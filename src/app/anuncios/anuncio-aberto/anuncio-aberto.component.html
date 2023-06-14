@@ -16,6 +16,13 @@
     <p><strong>Anunciante:</strong>{{ anuncio.usuario.nomeUsuario }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-stroked-button color="primary" mat-button>Chat</button>
+    <button
+      (click)="abrirChat()"
+      mat-stroked-button
+      color="primary"
+      mat-button
+    >
+      Chat
+    </button>
   </mat-card-actions>
 </mat-card>
