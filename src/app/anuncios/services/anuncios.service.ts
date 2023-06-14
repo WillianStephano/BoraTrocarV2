@@ -23,13 +23,12 @@ export class AnunciosService {
   }
 
   pegarAnuncio(id: number) {
-    const headers = new HttpHeaders({
-      Authorization: `${this.tokenService.getToken()}`,
-    });
+    // const headers = new HttpHeaders({  Authorization: `${this.tokenService.getToken()}`,});
 
-    return this.httpClient.get<Anuncio>(this.URL + `livro/buscar_livro/${id}`, {
-      headers,
-    });
+    return this.httpClient.get<Anuncio>(
+      this.URL + `livro/buscar_livro/${id}`
+      //{headers,}
+    );
     //.subscribe();
   }
 }

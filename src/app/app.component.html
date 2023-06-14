@@ -1,9 +1,11 @@
-<mat-toolbar color="primary">
-  <section class="menu-principal">
-    <a class="logo" routerLink="/">
-      <img src="../assets/books.svg" alt="" srcset="" />
-      <span>Bora Trocar</span>
-    </a>
+<div class="container">
+  <div class="content">
+    <mat-toolbar color="primary">
+      <section class="menu-principal">
+        <a class="logo" routerLink="/">
+          <img src="../assets/books.svg" alt="" srcset="" />
+          <span>Bora Trocar</span>
+        </a>
 
     <div class="menu-toolbar">
       <button
@@ -28,48 +30,51 @@
         </ng-container>
       </button>
 
-      <button
-        mat-button
-        *ngIf="!loginService.estaAutenticado()"
-        routerLink="/login"
-        routerLinkActive="router-link-active"
-      >
-        <i class="material-icons">person</i>
-        <ng-container *ngIf="emailUser; else userVazio">
-          {{ emailUser }}
-        </ng-container>
-      </button>
+          <button
+            mat-button
+            *ngIf="!loginService.estaAutenticado()"
+            routerLink="/login"
+            routerLinkActive="router-link-active"
+          >
+            <i class="material-icons">person</i>
+            <ng-container *ngIf="emailUser; else userVazio">
+              {{ emailUser }}
+            </ng-container>
+          </button>
 
-      <button
-        mat-button
-        *ngIf="!emailUser"
-        [routerLink]="['/login']"
-        routerLinkActive="router-link-active"
-      >
-        <i class="material-icons">home</i>
-        Login
-      </button>
+          <button
+            mat-button
+            *ngIf="!emailUser"
+            [routerLink]="['/login']"
+            routerLinkActive="router-link-active"
+          >
+            <i class="material-icons">home</i>
+            Login
+          </button>
 
-      <button
-        mat-button
-        [routerLink]="['/anuncios']"
-        routerLinkActive="router-link-active"
-      >
-        <i class="material-icons">comment</i>
-        Anuncios
-      </button>
+          <button
+            mat-button
+            [routerLink]="['/anuncios']"
+            routerLinkActive="router-link-active"
+          >
+            <i class="material-icons">comment</i>
+            Anuncios
+          </button>
 
-      <button mat-button *ngIf="emailUser" (click)="deslogar()">
-        <i class="material-icons">exit_to_app</i>
-        Sair
-      </button>
-    </div>
-  </section>
-</mat-toolbar>
+          <button mat-button *ngIf="emailUser" (click)="deslogar()">
+            <i class="material-icons">exit_to_app</i>
+            Sair
+          </button>
+        </div>
+      </section>
+    </mat-toolbar>
 
-<!-- Fala que estamos usando controle de rotas -->
-<router-outlet></router-outlet>
+    <!-- Fala que estamos usando controle de rotas -->
+    <router-outlet></router-outlet>
 
-<ng-template #userVazio>
-  <div class="">Perfil</div>
-</ng-template>
+    <ng-template #userVazio>
+      <div class="">Perfil</div>
+    </ng-template>
+  </div>
+  <app-rodape class="footer"></app-rodape>
+</div>
