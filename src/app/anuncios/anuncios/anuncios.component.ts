@@ -12,40 +12,33 @@ import { LoginService } from 'src/app/login/services/login.service';
 })
 export class AnunciosComponent {
   anuncios$: Observable<Anuncio[]>;
-  //private paginaRecarregada = false;
 
   constructor(
-    private AnunciosService: AnunciosService,
+    private anunciosService: AnunciosService,
     public loginService: LoginService,
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.anuncios$ = this.AnunciosService.listaTudo();
-    //this.recarregarPagina();
+    this.anuncios$ = this.anunciosService.listaTudo();
   }
 
   criaUmAnuncio() {
     this.router.navigate(['novo'], { relativeTo: this.route });
-    //pega a rota atual como base e adiciona a nova
   }
 
   abrirAnuncio(id: number) {
     return this.router.navigate([`livro/${id}`]);
   }
 
- /*  recarregarPagina() {
-    if (
-      !this.paginaRecarregada &&
-      this.router.url === '/anuncios' &&
-      this.loginService.estaAutenticado()
-    ) {
-      this.paginaRecarregada = true;
-      window.location.reload();
-      console.log('Página recarregada');
-    }
-  } */
-
+  //Gambiarra tosca para forçar reload ao usuario logar, contudo toda hora que vai para a rota /anuncios ele ta dando reload CORRIGIR;
   ngOnInit() {
-
+    const paginaRecarregada = localStorage.getItem('paginaRecarregada');
+    if (!paginaRecarregada) {
+      localStorage.setItem('paginaRecarregada', 'true');
+      console.log('Página recarregada');
+      window.location.reload();
+    } else {
+      localStorage.removeItem('paginaRecarregada');
+    }
   }
 }
