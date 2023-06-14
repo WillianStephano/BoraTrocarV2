@@ -23,7 +23,7 @@ export class ChatComponent {
     });
 
     this.mensagens.push({
-      usuario: 'Entre em com:',
+      usuario: 'Entre e converse com:',
       conteudo: 'Negocie a troca do livro aqui!',
       enviado: true,
     });
