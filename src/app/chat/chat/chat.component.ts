@@ -20,9 +20,25 @@ export class ChatComponent {
     this.formularioMensagem = new FormGroup({
       messageControl: new FormControl(''),
     });
+
+    this.mensagens.push({
+      usuario: 'Usuário teste',
+      conteudo: 'Esta é uma mensagem fixa.',
+      enviado: true,
+    });
   }
 
   enviaMensagem() {
-    return;
+    const conteudo = this.formularioMensagem.get('messageControl')?.value;
+
+    const novaMensagem: Mensagem = {
+      usuario: 'Usuario',
+      conteudo: conteudo,
+      enviado: true,
+    };
+
+    this.mensagens.push(novaMensagem);
+
+    this.formularioMensagem.get('messageControl')?.setValue('');
   }
 }
