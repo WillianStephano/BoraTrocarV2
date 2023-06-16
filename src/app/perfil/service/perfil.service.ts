@@ -33,6 +33,22 @@ export class PerfilService {
         tap(() => {
           window.location.reload();
         })
-      ).subscribe();
+      )
+      .subscribe();
+  }
+
+  alteraAnuncio(idLivro: number) {
+    const headers = new HttpHeaders({
+      Authorization: `${this.tokenService.getToken()}`,
+    });
+
+    return this.http
+      .put(this.URL + `/livro/alterar/${idLivro}`, { headers })
+      .pipe(
+        tap(() => {
+          window.location.reload();
+        })
+      )
+      .subscribe();
   }
 }

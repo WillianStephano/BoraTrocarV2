@@ -1,0 +1,48 @@
+<mat-card class="cadastro-anuncio">
+  <form
+    action="/submit-form"
+    method="post"
+    [formGroup]="aleteraAnunciosFormulario"
+  >
+    <h1>Altere seu anuncio</h1>
+    <img src="https://via.placeholder.com/150" alt="Foto de perfil" />
+
+    <mat-form-field>
+      <mat-label>ISBN</mat-label>
+      <input matInput type="text" formControlName="isbn" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Titulo do livro</mat-label>
+      <input matInput type="text" formControlName="nomeLivro" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Autor</mat-label>
+      <input matInput type="text" formControlName="autor" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Condição</mat-label>
+      <mat-select formControlName="condicao">
+        <mat-option *ngFor="let condicao of condicoes" [value]="condicao.value">
+          {{ condicao.valorVisualizado }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <input matInput type="text" formControlName="categoria" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descreva o livro</mat-label>
+      <textarea rows="8" matInput formControlName="descricao"></textarea>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button (click)="processaAlteracao(idN)" mat-stroked-button color="primary">Alterar anuncio</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

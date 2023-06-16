@@ -16,12 +16,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AnuncioAbertoComponent } from './anuncio-aberto/anuncio-aberto.component';
+import { AnunciosAlterarComponent } from './anuncios-alterar/anuncios-alterar.component';
 
 @NgModule({
   declarations: [
     AnunciosComponent,
     AnunciosCadastroComponent,
     AnuncioAbertoComponent,
+    AnunciosAlterarComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,22 @@
+.cadastro-anuncio {
+  width: 80%;
+  padding: 3%;
+  margin: 3% auto;
+
+  h1{
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 5px;
+
+    mat-form-field {
+      width: 70%;
+    }
+  }
+}

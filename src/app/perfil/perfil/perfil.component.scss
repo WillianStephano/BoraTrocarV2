@@ -71,12 +71,25 @@
         display: flex;
         justify-content: space-between;
 
-        .close {
-          color: red;
-          cursor: pointer;
-          &:hover {
-            transform: scale(120%);
-            transition: 250ms;
+        .acoes {
+          display: flex;
+          justify-content: space-between;
+          width: 15%;
+          .edit {
+            cursor: pointer;
+            &:hover {
+              transform: scale(120%);
+              transition: 250ms;
+            }
+          }
+
+          .close {
+            color: red;
+            cursor: pointer;
+            &:hover {
+              transform: scale(120%);
+              transition: 250ms;
+            }
           }
         }
       }

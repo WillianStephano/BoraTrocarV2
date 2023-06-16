@@ -25,12 +25,12 @@
               *ngFor="let anuncio of perfil.anunciosPostados"
             >
               <mat-card-header style="width: 100%">
-                <mat-card-title
-                  ><span>Titulo: </span>{{ anuncio.nomeLivro }}</mat-card-title
-                >
-                <mat-icon class="close" (click)="deletaAnuncio(anuncio.idLivro)"
-                  >close</mat-icon
-                >
+                <mat-card-title><span>Titulo: </span>{{ anuncio.nomeLivro }}
+                </mat-card-title>
+                <section class="acoes">
+                  <mat-icon class="edit" (click)="alteraAnuncio(anuncio.idLivro)">edit</mat-icon>
+                  <mat-icon class="close" (click)="deletaAnuncio(anuncio.idLivro)">close</mat-icon>
+                </section>
               </mat-card-header>
 
               <section>
